@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+            function isDateValid(year, month, day) {
+  
+  if (year < 1 || year > 2030) {
+    return false;
+  }
+
+  // Vérifier si le mois est valide (entre 1 et 12)
+  if (month < 1 || month > 12) {
+    return false;
+  }
+
+  // Vérifier si le jour est valide (entre 1 et 31)
+  if (day < 1 || day > 31) {
+    return false;
+  }
+
+  // Vérifier les mois avec 30 jours
+  if ((month === 4 || month === 6 || month === 9 || month === 11) && day > 30) {
+    return false;
+  }
+
+  // Vérifier le mois de février
+  if (month === 2) {
+    // Vérifier si l'année est bissextile
+    const isLeapYear = (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0;
+
+    if ((isLeapYear && day > 29) || (!isLeapYear && day > 28)) {
+      return false;
+    }
+  }
+
+  return true;
+}
+
+// Test de tous les cas possibles
+console.log("Test de la fonction isDateValid :");
+console.log("2023-08-01 est valide :", isDateValid(2023, 8, 1));
+console.log("2023-04-31 est valide :", isDateValid(2023, 4, 31));
+console.log("2023-02-29 est valide :", isDateValid(2023, 2, 29));
+console.log("2024-02-29 est valide :", isDateValid(2024, 2, 29));
+console.log("2023-13-01 est valide :", isDateValid(2023, 13, 1));
+console.log("2023-12-00 est valide :", isDateValid(2023, 12, 0));
+console.log("0-08-01 est valide :", isDateValid(0, 8, 1));
+console.log("2023-08-32 est valide :", isDateValid(2023, 8, 32));
+
+// Affichage en fin de programme
+console.log("Fin du programme.");
+
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

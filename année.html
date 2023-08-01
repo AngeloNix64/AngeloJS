@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        function estBissextile(annee) {
+        if ((annee % 4 === 0 && annee % 100 !== 0) || annee % 400 === 0) {
+            return true;
+        } else {
+            return false;
+        }
+        }
+
+        function conclusionBissextile (){
+        let anneeTest = 0
+        if (estBissextile(anneeTest)) {
+        console.log(anneeTest + " est une année bissextile.");
+        } else {
+        console.log(anneeTest + " n'est pas une année bissextile.");
+        }
+
+        }
+
+
+        function canBeDividedBy4(nb,divisor) 
+        
+        {
+            if(nb%divisor === 0){
+                return true;
+            }
+            return false;
+        }
+
+        function canBeDividedBy4(nb,divisor) 
+        {
+            return canBeDividedBy(nb,4) 
+        }
+
+        function canBeDividedBy400(nb,divisor) 
+        {
+            return canBeDividedBy(nb,400) 
+        }
+
+        function canBeDividedBy100(nb,divisor) 
+        {
+            return canBeDividedBy(nb,100) 
+        }
+
+        function canBeDividedBy4(nb) 
+        
+        {
+            if(nb%4 === 0){
+                return true;
+            } else{
+                return false;
+            }
+
+        }
+
+        function isLeapYear(year) 
+        {
+            if(canBeDividedBy400(year)){
+
+            } 
+            if (canBeDividedBy4(year) && !canBeDividedBy100(year)) {
+
+            }
+        }
+
+
+        main()
+        {
+            isEven(annee);
+            estBissextile(annee);
+            conclusionBissextile();
+
+        };
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
